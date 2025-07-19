@@ -1,0 +1,541 @@
+/* Estilos Gerais */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    background: #fefefe;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px; /* Largura máxima do conteúdo */
+    margin: 0 auto; /* Centraliza o container */
+    padding: 0 1.5rem; /* Espaçamento lateral */
+}
+
+section {
+    margin-bottom: 3rem;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    scroll-margin-top: 28rem;
+}
+
+h2, h3, h4 {
+    color: #2e7d32; /* Verde principal para títulos */
+    margin-top: 0;
+    margin-bottom: 0rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    border-bottom: 2px solid #c8e6c9;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+h3 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 0rem;
+}
+
+h4 {
+    font-size: 1.3rem;
+}
+
+/* Header (Cabeçalho Principal) */
+.main-header {
+    background: linear-gradient(to right, #2e7d32, #66bb6a); /* Gradiente verde */
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    position: sticky; /* Fixa o cabeçalho no topo ao rolar */
+    top: 0;
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.header-logo {
+    max-width: 180px; /* Tamanho do logo */
+    height: auto; /* Mantém a proporção */
+    margin-bottom: 1rem;
+    border: 3px solid rgba(255,255,255,0.7);
+}
+
+.site-title {
+    font-size: 3rem;
+    margin: 0.5rem 0 0;
+    font-weight: 700;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    opacity: 0.9;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0;
+    display: flex; /* Para alinhar os itens horizontalmente */
+    justify-content: center;
+    flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+}
+
+.main-nav li {
+    margin: 0 1rem;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 0.5rem 0.8rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.main-nav a:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+/* Hero Section (Seção Principal com Busca) */
+.hero-section {
+    background: url('https://images.unsplash.com/photo-1542838124-747385f09673?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 3rem 1rem; /* Aumenta o padding para dar mais destaque */
+    min-height: 250px;
+    margin-top: -3rem; /* Compensar o padding da section */
+    border-radius: 0; /* Remove border-radius para cobrir toda a largura */
+    box-shadow: none; /* Remove box-shadow */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -8rem;
+    scroll-margin-top: 8rem; /* Garante que o cabeçalho não cubra ao rolar para o hero */
+}
+
+.hero-section h2 {
+    font-size: 3.5rem;
+    /* text-shadow: 2px 2px 4px rgba(0,0,0,0.5); REMOVA OU COMENTE ESTA LINHA */
+    border-bottom: none;
+    margin-bottom: 2rem;
+    color: #66bb6a; /* Um verde claro e vibrante para o slogan */    
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(255,255,255,0.9);
+    border-radius: 30px;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.search-box input {
+    flex-grow: 1; /* Ocupa o espaço disponível */
+    border: none;
+    padding: 0.8rem 1rem;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    outline: none; /* Remove borda de foco */
+    background: transparent;
+}
+
+.search-box button {
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.search-box button:hover {
+    background-color: #388e3c;
+    transform: translateY(-2px);
+}
+
+/* Seção de Categorias com Imagens (Categories Display) */
+.categories-display-section h3 {
+    margin-bottom: 1.0rem;
+}
+
+.categories-wrapper {
+    display: flex;
+    overflow-x: auto; /* Permite rolagem horizontal */
+    gap: 1.5rem; /* Espaçamento entre os cards */
+    padding-bottom: 1rem; /* Espaçamento para a barra de rolagem */
+    -webkit-overflow-scrolling: touch; /* Melhor rolagem em iOS */
+    scrollbar-width: thin; /* Estilo para Firefox */
+    scrollbar-color: #c8e6c9 #f0f0f0; /* Estilo para Firefox (thumb track) */
+}
+
+/* Estiliza a barra de rolagem para navegadores WebKit (Chrome, Safari) */
+.categories-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.categories-wrapper::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 10px;
+}
+
+.categories-wrapper::-webkit-scrollbar-thumb {
+    background-color: #c8e6c9;
+    border-radius: 10px;
+    border: 2px solid #fefefe;
+}
+
+.category-card.interactive-category-card { /* Adicionamos a classe interactive-category-card aqui também */
+    flex-shrink: 0; /* Impede que os itens encolham */
+    width: 140px; /* Largura fixa para os cards de categoria */
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    border: 1px solid #eee;
+}
+
+.category-card.interactive-category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.category-card.interactive-category-card img {
+    width: 90px; /* Largura fixa para a imagem da categoria */
+    height: 90px; /* Altura fixa para a imagem da categoria */
+    object-fit: cover; /* **Redimensiona a imagem para preencher o contêiner sem distorcer, cortando o excesso** */
+    border-radius: 50%; /* Imagens circulares para categorias */
+    margin-bottom: 0.8rem;
+    border: 3px solid #c8e6c9;
+}
+
+.category-card.interactive-category-card h4 {
+    font-size: 1.1rem;
+    margin: 0;
+    color: #2e7d32;
+}
+
+
+/* Seção de Produtos */
+.products-section h3 {
+    margin-bottom: 2.5rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Layout responsivo em grade */
+    gap: 1.5rem;
+}
+
+.product-card {
+    background-color: #fcfcfc;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 1.2rem;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex; /* Para flexbox interno do card */
+    flex-direction: column;
+    justify-content: space-between; /* Empurra o conteúdo para as pontas */
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+    width: 100%; /* Imagem preenche a largura do card */
+    max-height: 200px; /* Altura máxima da imagem */
+    object-fit: contain; /* **Redimensiona a imagem para caber no contêiner sem cortar, adicionando espaço se necessário** */
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.product-card h4 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    color: #4CAF50; /* Um verde ligeiramente diferente para o produto */
+}
+
+.product-card p {
+    font-size: 0.95rem;
+    color: #555;
+    flex-grow: 1; /* Permite que o parágrafo ocupe o espaço */
+    margin-bottom: 1rem;
+}
+
+/* Seção Sobre Nós */
+.about-section p {
+    font-size: 1.1rem;
+    text-align: justify;
+    margin-bottom: 1rem;
+}
+
+.about-section p strong {
+    color: #2e7d32;
+}
+
+/* Seção Nossos Clientes */
+.clients-section {
+    text-align: center;
+}
+
+.clients-intro, .clients-call-to-action {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+.client-logos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Grade para logos */
+    gap: 1.5rem;
+    justify-content: center; /* Centraliza a grade */
+    align-items: center;
+}
+
+.client-card {
+    background-color: #fcfcfc;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.client-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.client-card img {
+    max-width: 100%; /* Imagem se ajusta ao card */
+    height: 80px; /* Altura fixa para todos os logos */
+    object-fit: contain; /* **Redimensiona o logo para caber sem cortar** */
+    margin-bottom: 0.8rem;
+    filter: grayscale(80%); /* Deixa os logos em tons de cinza para uniformidade */
+    transition: filter 0.3s ease;
+}
+
+.client-card:hover img {
+    filter: grayscale(0%); /* Colore o logo ao passar o mouse */
+}
+
+.client-card h4 {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    color: #2e7d32;
+}
+
+.client-card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0;
+}
+
+/* Seção de Contato */
+.contact-section .contact-info p {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+}
+
+.contact-section .contact-info i {
+    color: #2e7d32;
+    margin-right: 0.8rem;
+    font-size: 1.3rem;
+    width: 25px; /* Garante alinhamento dos ícones */
+    text-align: center;
+}
+
+.contact-section .whatsapp-link {
+    background: #25d366;
+    color: white;
+    text-decoration: none;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    display: inline-flex; /* Para alinhar ícone e texto */
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.contact-section .whatsapp-link:hover {
+    background: #1da851;
+}
+
+.contact-section .contact-info a {
+    color: #2e7d32;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-section .contact-info a:hover {
+    text-decoration: underline;
+    color: #388e3c;
+}
+
+.contact-section ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1.5rem;
+}
+
+.contact-section ul li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #555;
+}
+
+.map-container {
+    margin-top: 2rem;
+    border-radius: 12px;
+    overflow: hidden; /* Garante que o iframe siga o border-radius */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 350px; /* Altura do mapa */
+    border: none;
+}
+
+/* Footer (Rodapé) */
+.main-footer {
+    background: #2e7d32;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+    margin-top: 3rem;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 992px) {
+    .site-title {
+        font-size: 2.5rem;
+    }
+    .hero-section h2 {
+        font-size: 2.8rem;
+    }
+    .main-nav ul {
+        flex-direction: column; /* Menu vertical em telas menores */
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+    }
+    h3 {
+        font-size: 1.8rem;
+    }
+    .hero-section {
+        padding: 4rem 1rem;
+        min-height: 300px;
+    }
+    .hero-section h2 {
+        font-size: 2.2rem;
+    }
+    .search-box {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    .search-box input, .search-box button {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    .search-box button {
+        margin-bottom: 0;
+    }
+    .categories-wrapper {
+        padding-left: 1rem; /* Ajuste para rolagem em telas menores */
+        padding-right: 1rem;
+    }
+    .product-grid, .client-logos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+    .main-header {
+        padding: 1.5rem 0.5rem;
+    }
+    .header-logo {
+        ax-width: 180px;
+        height: auto;
+        margin-bottom: 1rem;
+        border: 3px solid rgba(255,255,255,0.7);
+    }
+    .site-title {
+        font-size: 2rem;
+    }
+    .tagline {
+        font-size: 1rem;
+    }
+    .hero-section h2 {
+        font-size: 1.8rem;
+    }
+    .search-box input, .search-box button {
+        font-size: 1rem;
+        padding: 0.6rem 1rem;
+    }
+    .category-card.interactive-category-card {
+        width: 120px;
+        padding: 0.8rem;
+    }
+    .category-card.interactive-category-card img {
+        width: 70px;
+        height: 70px;
+    }
+    .category-card.interactive-category-card h4 {
+        font-size: 1rem;
+    }
+    .product-card {
+        padding: 1rem;
+    }
+    .product-card img {
+        max-height: 150px;
+    }
+    .product-card h4 {
+        font-size: 1.1rem;
+    }
+    .about-section p, .clients-intro, .clients-call-to-action, .contact-section .contact-info p {
+        font-size: 0.95rem;
+    }
+    .client-card img {
+        max-width: 100%;
+        height: 60px;
+    }
+    .map-container iframe {
+        height: 250px;
+    }
+}
